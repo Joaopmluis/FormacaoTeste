@@ -4,23 +4,23 @@ import { token } from "morgan";
 interface IUser extends Document {
 
     _id: string;
-    nome: string;
+    name: string;
     email: string;
     password: string;
     access_token: string;
 }
 
 const User: Schema = new mongoose.Schema({
-    nome: {
-        typicode:String,
-        Requeired:true
+    name: {
+        type:String,
+        required:true
     },
     email:{
         type: String,
         required: true,
         unique: true
     },
-    passord:{
+    password:{
         type: String,
         required: true,
 
