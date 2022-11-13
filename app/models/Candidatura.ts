@@ -1,26 +1,26 @@
 import mongoose, {Schema, Document} from "mongoose";
 import { token } from "morgan";
 
-interface IUser extends Document {
+interface ICandidatura extends Document {
 
     _id: string;
     name: string;
-    email: string;
-    password: string;
-    access_token: string;
+    morada: string;
+    funcao: string;
+   
 }
 
-const User: Schema = new mongoose.Schema({
+const Candidatura: Schema = new mongoose.Schema({
     name: {
         type:String,
         required:true
     },
-    email:{
+    morada:{
         type: String,
         required: true,
         unique: true
     },
-    password:{
+    funcao:{
         type: String,
         required: true,
 
@@ -30,4 +30,4 @@ const User: Schema = new mongoose.Schema({
     {timestamps: true} 
 );
 
-export default mongoose.model<IUser>('User', User, 'users')
+export default mongoose.model<ICandidatura>('Candidatura', Candidatura, 'candidaturas')
